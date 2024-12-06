@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "422364362599",
+    "project_id": "contactomovile",
+    "storage_bucket": "contactomovile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422364362599:android:4c31bb6c899823737ee1c2",
+        "android_client_info": {
+          "package_name": "com.example.contactomovile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGWdSv_pdmrZ1jKddMT05hETcQRII8Zvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
