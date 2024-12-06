@@ -17,6 +17,11 @@
         <activity
             android:name=".activities.SingUpActivity"
             android:windowSoftInputMode="adjustResize"
+            android:exported="true"
+            />
+        <activity
+            android:name=".activities.MainActivity"
+            android:windowSoftInputMode="adjustResize"
             />
         <activity
             android:name=".activities.SingInActivity"
