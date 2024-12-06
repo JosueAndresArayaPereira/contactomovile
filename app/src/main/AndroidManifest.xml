@@ -10,10 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Contactomovile"
+        android:theme="@style/Theme.ChatApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.SingUpActivity"
+            android:windowSoftInputMode="adjustResize"
+            />
+        <activity
+            android:name=".activities.SingInActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
