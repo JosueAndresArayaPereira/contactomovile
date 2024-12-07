@@ -50,7 +50,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
 
         UserViewHolder(ItemContainerUserBinding itemContainerUserBinding) {
             super(itemContainerUserBinding.getRoot());
-            this.binding = itemContainerUserBinding; // Asignar el binding recibido al atributo de la clase
+            this.binding = itemContainerUserBinding;
         }
 
         void setUserData(User user) {
