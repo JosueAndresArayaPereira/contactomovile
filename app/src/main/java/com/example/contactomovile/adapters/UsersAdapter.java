@@ -45,18 +45,19 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
         return users.size();
     }
 
-    class UserViewHolder extends RecyclerView.ViewHolder{
-        ItemContainerUserBinding binding;
-        UserViewHolder(ItemContainerUserBinding itemContainerUserBinding){
+    class UserViewHolder extends RecyclerView.ViewHolder {
+        private final ItemContainerUserBinding binding;
+
+        UserViewHolder(ItemContainerUserBinding itemContainerUserBinding) {
             super(itemContainerUserBinding.getRoot());
+            this.binding = itemContainerUserBinding; // Asignar el binding recibido al atributo de la clase
         }
 
-        void setUserData(User user){
+        void setUserData(User user) {
             binding.textName.setText(user.name);
             binding.textEmail.setText(user.email);
             binding.imageProfile.setImageBitmap(getUserImage(user.image));
         }
-
     }
     private Bitmap getUserImage(String encodedImage){
         byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
