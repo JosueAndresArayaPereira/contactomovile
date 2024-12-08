@@ -1,5 +1,6 @@
 package com.example.contactomovile.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.contactomovile.R;
 import com.example.contactomovile.adapters.UsersAdapter;
 import com.example.contactomovile.databinding.ActivityUsersBinding;
+import com.example.contactomovile.listeners.UserListener;
 import com.example.contactomovile.models.User;
 import com.example.contactomovile.utilities.Constants;
 import com.example.contactomovile.utilities.PreferenceManager;
@@ -21,7 +23,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements UserListener {
 
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
@@ -62,7 +64,7 @@ public class UsersActivity extends AppCompatActivity {
                             users.add(user);
                         }
                         if(users.size() > 0){
-                            UsersAdapter usersAdapter = new UsersAdapter(users);
+                            UsersAdapter usersAdapter = new UsersAdapter(users, this);
                             binding.usersRecyclerView.setAdapter(usersAdapter);
                             binding.usersRecyclerView.setVisibility(View.VISIBLE);
                         }else{
@@ -87,4 +89,11 @@ public class UsersActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
+    }
 }
